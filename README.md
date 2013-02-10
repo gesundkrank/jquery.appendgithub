@@ -30,3 +30,9 @@ options:
 	prefix (optional default="https://api.github.com/repos/") : path prefix 
 	parseMarkdown (optional default=true): if true markdown is parsed to html 
 ```
+
+##Example
+Append this readme to your html body
+```javascript
+$("body").appendGitHub("gesundkrank/jquery.appendgithub/contents/Readme.md");
+```
