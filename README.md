@@ -1,6 +1,7 @@
 #jQuery appendGitHub Plugin
 
-Append file contents from GitHub repositories to your website. Supports Markdown.
+Append file contents from GitHub repositories to your website. Supports Markdown. 
+Uses GitHub API: http://developer.github.com/v3/repos/contents/#get-contents
 
 ##Installation
 1. Download latest version (minified version is recommended)
@@ -13,3 +14,13 @@ Append file contents from GitHub repositories to your website. Supports Markdown
 	```
 
 ##Usage
+```
+$("body_or_any_other_container").appendGitHub(path, options) → jQuery;
+```
+**Parameters**
+```
+path : :owner/:repo/contents/:path
+options:
+	prefix (optional default="https://api.github.com/repos/") : path prefix 
+	parseMarkdown (optional default=true): if true markdown gets parsed into html 
+```
