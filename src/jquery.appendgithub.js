@@ -16,7 +16,7 @@
       	
 	      	var settings = {
 	      		domain : "https://api.github.com/repos/",
-	      		parseMarkdown : false
+	      		parseMarkdown : true
 	      	}
 	      	
 	      	$.extend(settings, options);
@@ -24,14 +24,12 @@
 	      	$.ajax({
 				url:settings.domain+path,
 				type:"GET",
-				data:{callback:"?"},
 				dataType:"jsonp",
 				success:function(json){
 					var content = Base64.decode(json.data.content);
 					
 					if(settings.parseMarkdown)
 						content = marked(content);
-					// var content = window.atob(json.data.content);
 					$this.append(content);
 				}
 			});
